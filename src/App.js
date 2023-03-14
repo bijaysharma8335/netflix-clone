@@ -1,10 +1,12 @@
+import Home from "./pages/Home";
 
-import './App.css';
-
-function App() {
-  return (
-   <h1>Netflix Clone</h1>
-  );
-}
+const App = () => {
+    return (
+        <div>
+            <h1>Netflix Clone</h1>
+            <Home />
+        </div>
+    );
+};
 
 export default App;
