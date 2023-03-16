@@ -1,7 +1,6 @@
 import Banner from "./components/Banner";
 import Navigation from "./components/Nav";
 import Row from "./components/Row";
-import Home from "./pages/Home";
 import requests from "./requests";
 
 const App = () => {
@@ -22,3 +21,4 @@ const App = () => {
 };
 
 export default App;
+// https://github.com/mcosta21/netflix-clone-reactjs
