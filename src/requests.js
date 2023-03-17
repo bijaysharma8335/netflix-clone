@@ -1,4 +1,4 @@
-const API_KEY = "78b46ddd5ad9c0c297679e24884000ff";
+import { API_KEY } from "./config/Config";
 
 const requests = {
     // requestPopular: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`,
