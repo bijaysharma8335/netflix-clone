@@ -1,22 +1,17 @@
-import Banner from "./components/Banner";
-import Navigation from "./components/Nav";
-import Row from "./components/Row";
-import requests from "./requests";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Signup from "./pages/signup/Signup";
+import Signin from "./pages/signin/Signin";
 
 const App = () => {
     return (
-        <div className="app">
-            <Navigation />
-            <Banner />
-            <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
-            <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-            <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-            <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-            <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-            <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
-            <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-            <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route exact path="/signup" element={<Signup />} />
+                <Route exact path="/signin" element={<Signin />} />
+            </Routes>
+        </BrowserRouter>
     );
 };
 
