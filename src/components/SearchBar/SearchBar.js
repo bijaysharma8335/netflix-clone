@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 const SearchBar = () => {
     const [currentpath, setCurrentpath] = useState("");
-    const handleChange = (e) => {
-        
-    };
+    const handleChange = (e) => {};
     return (
         <div className="container-1">
             <div className="container-2">

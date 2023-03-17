@@ -1,39 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Background from "../../Assets/Background.jpg";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import FormInput from "../../components/FormInput/FormInput";
-import "./Signup.scss";
+import "./Signup.css";
+
 const Signup = () => {
+    const [credentials, setCredentials] = useState({
+        displayName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+    });
+    const { displayName, email, password, confirmPassword } = credentials;
+    const handleSubmit = () => {};
+    const handleChange = () => {};
+
+
     return (
         <div className="signup">
-            <div className="signup__bg" style={{ backgroundImage: `url(${Background})` }}></div>
+            <div className="signup__bg" style={{ backgroundImage: `url(${Background})` }} />
             <div className="signup__container">
                 <div className="signup__shadow">
                     <h1 className="signup__title">Sign Up</h1>
-                    <form action="POST">
-                        <FormInput name="displayName" type="name" label="Name" required />
-                        <FormInput name="email" type="email" label="Email" required />
-                        <FormInput name="password" type="password" label="Password" required />
+
+                    <form action="POST" onSubmit={handleSubmit}>
                         <FormInput
-                            name="ConfirmPassword"
+                            name="displayName"
+                            type="name"
+                            value={displayName}
+                            handleChange={handleChange}
+                            label="Name"
+                            required
+                        />
+
+                        <FormInput
+                            name="email"
+                            type="email"
+                            value={email}
+                            handleChange={handleChange}
+                            label="Email"
+                            required
+                        />
+
+                        <FormInput
+                            name="password"
                             type="password"
+                            value={password}
+                            handleChange={handleChange}
+                            label="Password"
+                            required
+                        />
+
+                        <FormInput
+                            name="confirmPassword"
+                            type="password"
+                            value={confirmPassword}
+                            handleChange={handleChange}
                             label="Confirm Password"
                             required
                         />
 
-                        <div className="signup__btn_container">
-                            <div className="signup_btn">
-                                <CustomButton type="submit">Sign Up</CustomButton>
+                        <div className="signup__btn-container">
+                            <div className="signup__btn">
+                                <CustomButton type="submit"> Sign Up </CustomButton>
                             </div>
                         </div>
                     </form>
-
-                    {/* signup option  */}
                     <div className="signup__option">
-                        <span className="signup__optoion--newuser">Already Signed up?</span>
+                        <span className="signup__option--newuser">Already signed up?</span>
                         <Link to="/signin" className="signup__option--link">
-                            Login Now
+                            Log in now.
                         </Link>
                     </div>
                 </div>
