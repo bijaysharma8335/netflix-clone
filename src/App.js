@@ -2,11 +2,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Signup from "./pages/signup/Signup";
 import Signin from "./pages/signin/Signin";
-import SearchPage from "./pages/SearchPage/SearchPage";
+import SearchPage from "./components/SearchPage/SearchPage";
+import Header from "./components/Header/Header";
 
 const App = () => {
     return (
         <BrowserRouter>
+            <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route exact path="/signup" element={<Signup />} />

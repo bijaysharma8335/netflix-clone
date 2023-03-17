@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar/SearchBar";
-import Logo from "../Assets/logo.png";
+import SearchBar from "../SearchBar/SearchBar";
+import Logo from "../../Assets/logo.png";
+import "./Header.css";
 const Header = () => {
     return (
         <div className="header">
@@ -19,7 +20,7 @@ const Header = () => {
                     <Link className="header__option" to="/mylist">
                         My List
                     </Link>
-                    <div className="header__serachbar">
+                    <div className="header__searchbar">
                         <SearchBar />
                     </div>
                 </div>
