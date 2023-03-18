@@ -5,7 +5,7 @@ import Background from "../../Assets/Background.jpg";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import FormInput from "../../components/FormInput/FormInput";
 import "./Signin.css";
-const Signin = () => {
+const Signin = () => { 
     const [credentials, setCredentials] = useState({
         email: "",
         password: "",

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import Logo from "../../Assets/logo.png";
 import "./Header.css";
-const Header = () => {
+const Header = ({ currentUser, hidden, ToggleMenuHidden }) => {
     return (
         <div className="header">
             <div className="header__logo-box">
@@ -23,6 +23,14 @@ const Header = () => {
                     <div className="header__searchbar">
                         <SearchBar />
                     </div>
+
+                    {currentUser ? (
+                        <div className="header__options-secondary">
+                            <Link>Hello {currentUser?.displayName}</Link>
+                        </div>
+                    ) : (
+                        <div></div>
+                    )}
                 </div>
             </div>
         </div>
